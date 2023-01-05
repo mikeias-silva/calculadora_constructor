@@ -2,7 +2,7 @@ function Calculadora() {
     this.inicia = () => {
         cliqueBotoes();
         pressEnter();
-        pressBackSpace();
+        // pressBackSpace();
     }
     const display = document.querySelector('.display')
     function pressEnter() {
@@ -37,13 +37,16 @@ function Calculadora() {
 
     function clearDisplay() {
         display.value = '';
+        display.focus();
     }
 
     function btnParaDisplay(valor) {
         display.value += valor
+        display.focus();
     }
     function apagarUm() {
         display.value = display.value.slice(0, -1)
+        display.focus();
     }
     function cliqueBotoes() {
         document.addEventListener('click', event => {
